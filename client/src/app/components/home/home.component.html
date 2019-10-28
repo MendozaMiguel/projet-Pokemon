@@ -1,0 +1,32 @@
+<section class="pok-align-player">
+  <div class="pok-player-1">
+    <h2>Name Pokemon 1</h2>
+    <div>
+      stat santé
+    </div>
+  </div>
+  <div class="pok-player-2">
+    <h2>Name pokemon 2</h2>
+    <div>
+      stat santé
+    </div>
+  </div>
+</section>
+<section class="pok-actions">
+  <button (click)="actionStartGame()">
+    START NEW GAME
+  </button>
+  <app-actions-player *ngIf="startGame"></app-actions-player>
+  <!-- New Component? for actions Players -->
+  <div class="pok-list-pokemon">
+    <div class="pok-pokemon1">
+      <h3><u>Name pokemon</u></h3>
+    </div>
+    <div class="pok-pokemon2">
+      <h3><u>Name pokemon</u></h3>
+    </div>
+    <div class="pok-pokemon3">
+      <h3><u>Name pokemon</u></h3>
+    </div>
+  </div>
+</section>

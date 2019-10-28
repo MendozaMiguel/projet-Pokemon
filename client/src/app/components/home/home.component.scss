@@ -1,0 +1,36 @@
+.pok-align-player {
+  display: flex;
+  border: 1px solid green;
+  .pok-player-1 {
+    text-align: center;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+  .pok-player-2 {
+    text-align: center;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.pok-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .pok-list-pokemon {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    .pok-pokemon1 {
+      width: 33.3333%;
+    }
+    .pok-pokemon2 {
+      width: 33.3333%;
+    }
+    .pok-pokemon3 {
+      width: 33.3333%;
+    }
+  }
+}
