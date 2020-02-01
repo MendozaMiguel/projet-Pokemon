@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "pokemons",
   "info": {
     "name": "pokemons",
     "description": ""
@@ -15,13 +15,16 @@
     "pv": {
       "type": "integer"
     },
-    "attaque": {
+    "max_attaque": {
       "type": "integer"
     },
     "defense": {
       "type": "integer"
     },
     "attack_spe": {
+      "type": "integer"
+    },
+    "min_attack": {
       "type": "integer"
     }
   }
