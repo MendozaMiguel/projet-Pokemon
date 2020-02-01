@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "pokemons",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "pv": {
+      "type": "integer"
+    },
+    "attaque": {
+      "type": "integer"
+    },
+    "defense": {
+      "type": "integer"
+    },
+    "attack_spe": {
+      "type": "integer"
+    }
+  }
+}
