@@ -1,0 +1,30 @@
+{
+  "/api": {
+    "target": "http://localhost:1337",
+    "secure": false,
+    "pathRewrite": {
+      "^/": ""
+    }
+  },
+  "/upload": {
+    "target": "http://localhost:1337",
+    "secure": false,
+    "pathRewrite": {
+      "^/": ""
+    }
+  },
+  "/auth": {
+    "target": "http://localhost:1337",
+    "secure": false,
+    "pathRewrite": {
+      "^/": ""
+    }
+  },
+  "/user": {
+    "target": "http://localhost:1337",
+    "secure": false,
+    "pathRewrite": {
+      "^/": ""
+    }
+  }
+}

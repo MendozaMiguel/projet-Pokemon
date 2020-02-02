@@ -1,0 +1,20 @@
+<p>
+  POKEMONS works!
+</p>
+
+<div class="pok-list-pokemon">
+  <div *ngFor="let pokemon of pokemons" class="pok-pokemon1">
+    <h3>
+      <u>{{ pokemon.name }}</u>
+    </h3>
+    <h5>
+      {{ pokemon.max_attack }}
+    </h5>
+    <h5>
+      {{ pokemon.min_attack }}
+    </h5>
+    <h5>
+      {{ pokemon.attack_spe }}
+    </h5>
+  </div>
+</div>

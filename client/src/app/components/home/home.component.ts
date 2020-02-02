@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiClientService, API_URI_POKEMONS } from './../../api-client/api-client.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   startGame = false;
 
-  constructor() { }
+  constructor(public apiClientService: ApiClientService) { }
 
   ngOnInit() {
+
   }
 
   actionStartGame() {
