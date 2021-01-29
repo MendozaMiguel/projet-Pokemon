@@ -1,3 +1,31 @@
-<p>
-  actions-player works!
-</p>
+<section class="row">
+    <div class="small-6 columns">
+        <h1 class="text-center">Pokemon1</h1>
+        <div class="healthbar">
+            <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" [ngStyle]="{'width':playerHealth+ '%'}">{{playerHealth}}</div>
+        </div>
+    </div>
+    <div class="small-6 columns">
+        <h1 class="text-center">Pokemon2</h1>
+        <div class="healthbar">
+            <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" [ngStyle]="{'width': monsterHealth+'%'}">{{monsterHealth}}</div>
+        </div>
+    </div>
+</section>
+
+<section class="row controls" v-if="gameIsRunning">
+    <div class="small-12 columns">
+        <button id="attack" (click)="attack()">ATTACK</button>
+        <button id="special-attack" (click)="specialAttack()">SPECIAL ATTACK({{attackSp}})</button>
+        <button id="heal" (click)="heal()">HEAL({{setHealth}})</button>
+        <button id="give-up" (click)="giveUp()">GIVE UP</button>
+    </div>
+</section>
+
+<section class="row log" *ngIf="turns.length > 0">
+    <div class="small-12 columns">
+        <ul>
+            <li *ngFor="let turn of turns" [ngClass]="{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}">{{turn.text}}</li>
+        </ul>
+    </div>
+</section>

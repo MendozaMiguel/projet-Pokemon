@@ -7,7 +7,13 @@ import { ApiClientService, API_URI_POKEMONS } from './../../api-client/api-clien
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  startGame = false;
+  attackSp: number;
+  turns: any;
+  monsterHealth: number;
+  setHealth: number;
+  playerHealth: number;
+  gameIsRunning: boolean;
+  startGame: boolean;
 
   constructor(public apiClientService: ApiClientService) { }
 
@@ -16,7 +22,12 @@ export class HomeComponent implements OnInit {
   }
 
   actionStartGame() {
-    return this.startGame = !this.startGame;
+    this.startGame = !this.startGame;
+    this.playerHealth = 100;
+    this.monsterHealth = 100;
+    this.turns = [];
+    this.attackSp = 5;
+    this.setHealth = 3;
   }
 
 }
