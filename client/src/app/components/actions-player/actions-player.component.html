@@ -13,7 +13,7 @@
     </div>
 </section>
 
-<section class="row controls" v-if="gameIsRunning">
+<section class="row controls" *ngIf="gameIsRunning">
     <div class="small-12 columns">
         <button id="attack" (click)="attack()">ATTACK</button>
         <button id="special-attack" (click)="specialAttack()">SPECIAL ATTACK({{attackSp}})</button>
