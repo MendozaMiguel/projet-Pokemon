@@ -1,23 +1,23 @@
 <section class="pok-align-player">
-  <div class="pok-player-1">
-    <h2>Name Pokemon 1</h2>
-    <div>
-      stat santé
+    <div class="pok-player-1">
+        <h2>Name Pokemon 1</h2>
+        <div>
+            stat santé
+        </div>
     </div>
-  </div>
-  <div class="pok-player-2">
-    <h2>Name pokemon 2</h2>
-    <div>
-      stat santé
+    <div class="pok-player-2">
+        <h2>Name pokemon 2</h2>
+        <div>
+            stat santé
+        </div>
     </div>
-  </div>
 </section>
 <section class="pok-actions">
-  <button (click)="actionStartGame()">
+    <button (click)="actionStartGame()">
     START NEW GAME
   </button>
-  <app-actions-player *ngIf="startGame"></app-actions-player>
+    <app-actions-player *ngIf="startGame" [gameIsRunning]="startGame" [user]="user" [monsterHealth]="monsterHealth"></app-actions-player>
 </section>
 <section>
-  <app-pokemons></app-pokemons>
+    <app-pokemons></app-pokemons>
 </section>

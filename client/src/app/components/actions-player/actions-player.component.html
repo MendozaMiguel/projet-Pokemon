@@ -2,7 +2,7 @@
     <div class="small-6 columns">
         <h1 class="text-center">Pokemon1</h1>
         <div class="healthbar">
-            <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" [ngStyle]="{'width':playerHealth+ '%'}">{{playerHealth}}</div>
+            <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" [ngStyle]="{'width':this.user.pokemon.pv+ '%'}">{{this.user.pokemon.pv}}</div>
         </div>
     </div>
     <div class="small-6 columns">
@@ -16,7 +16,7 @@
 <section class="row controls" *ngIf="gameIsRunning">
     <div class="small-12 columns">
         <button id="attack" (click)="attack()">ATTACK</button>
-        <button id="special-attack" (click)="specialAttack()">SPECIAL ATTACK({{attackSp}})</button>
+        <button id="special-attack" (click)="specialAttack()">SPECIAL ATTACK({{this.user.pokemon.attack_spe}})</button>
         <button id="heal" (click)="heal()">HEAL({{setHealth}})</button>
         <button id="give-up" (click)="giveUp()">GIVE UP</button>
     </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-actions-player',
@@ -8,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ActionsPlayerComponent implements OnInit {
   attackSp: number;
   turns = [];
-  monsterHealth: number;
-  setHealth: number;
+  @Input() monsterHealth: number;
+  setHealth = 3;
   playerHealth: number;
-  gameIsRunning: boolean;
+  @Input() gameIsRunning: boolean;
+  @Input() user: any;
+
 
   constructor() { }
 
@@ -19,10 +21,10 @@ export class ActionsPlayerComponent implements OnInit {
   }
 
   public attack() {
-    if (this.attackSp === 0) {
-      this.attackSp = this.attackSp;
+    if (this.user.pokemon.attack_spe === 0) {
+      this.user.pokemon.attack_spe = this.user.pokemon.attack_spe;
     } else {
-      this.attackSp--;
+      this.user.pokemon.attack_spe--;
     }
     const damage = this.calculateDamage(3, 10);
     this.turns.unshift({
@@ -37,7 +39,7 @@ export class ActionsPlayerComponent implements OnInit {
   }
 
   public specialAttack() {
-    if (this.attackSp === 0) {
+    if (this.user.pokemon.attack_spe === 0) {
       const damageSp = this.calculateDamage(10, 20);
       this.monsterHealth -= damageSp;
       this.turns.unshift({
@@ -48,7 +50,7 @@ export class ActionsPlayerComponent implements OnInit {
         return;
       }
       this.monsterAttacks();
-      this.attackSp = 5;
+      this.user.pokemon.attack_spe = 5;
     } else {
       this.turns.unshift({
         isPlayer: true,
@@ -61,16 +63,16 @@ export class ActionsPlayerComponent implements OnInit {
     const health = 10;
     this.setHealth -= 1;
     if (this.setHealth >= 0) {
-      if (this.attackSp === 0) {
-        this.attackSp = this.attackSp;
+      if (this.user.pokemon.attack_spe === 0) {
+        this.user.pokemon.attack_spe = this.user.pokemon.attack_spe;
       } else {
-        this.attackSp--;
+        this.user.pokemon.attack_spe--;
       }
       this.monsterAttacks();
-      if (this.playerHealth <= 90) {
-        this.playerHealth += health;
+      if (this.user.pokemon.pv <= 90) {
+        this.user.pokemon.pv += health;
       } else {
-        this.playerHealth = 100;
+        this.user.pokemon.pv = 100;
       }
       this.turns.unshift({
         isPlayer: true,
@@ -91,7 +93,7 @@ export class ActionsPlayerComponent implements OnInit {
 
   public monsterAttacks() {
     const damageMonster = this.calculateDamage(5, 12);
-    this.playerHealth -= damageMonster;
+    this.user.pokemon.pv -= damageMonster;
     // this.checkWin();
     this.turns.unshift({
       isPlayer: false,
@@ -113,13 +115,13 @@ export class ActionsPlayerComponent implements OnInit {
         this.monsterHealth = 0;
       }
       return true;
-    } else if (this.playerHealth <= 0) {
+    } else if (this.user.pokemon.pv <= 0) {
       if (confirm('You lost! New Game?')) {
         // this.startGame();
         this.setHealth = 3;
       } else {
         this.gameIsRunning = false;
-        this.playerHealth = 0;
+        this.user.pokemon.pv = 0;
       }
       return true;
     }
