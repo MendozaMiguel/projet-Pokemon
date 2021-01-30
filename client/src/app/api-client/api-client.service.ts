@@ -5,8 +5,12 @@ import { Observable, throwError } from 'rxjs';
 
 const prefix = 'api/';
 
+// API POKEMONS
 export const API_URI_POKEMONS: string = prefix + 'pokemons';
 export const API_URI_POKEMON: string = prefix + 'pokemons/:id';
+
+// API USERS
+export const API_URI_USER = 'users';
 
 @Injectable()
 export class ApiClientService {
@@ -32,7 +36,7 @@ export class ApiClientService {
 
   /**
    * Methode get()
-   * @param path
+   * @param path: string
    */
   get(path: string): Observable<any> {
     return this.http.get(path).pipe(map(this.extractData));
@@ -40,8 +44,8 @@ export class ApiClientService {
 
   /**
    * Methode post()
-   * @param path
-   * @param payload
+   * @param path: string
+   * @param payload: any
    */
   post(path: string, payload: any): Observable<any> {
     return this.http.post<any>(path, payload).pipe(
@@ -51,7 +55,7 @@ export class ApiClientService {
 
   /**
    * Methode delete()
-   * @param path
+   * @param path: string
    */
   delete(path: string): Observable<any> {
     return this.http.delete<any>(path).pipe(
@@ -61,8 +65,8 @@ export class ApiClientService {
 
   /**
    * Methode put()
-   * @param path
-   * @param payload
+   * @param path: string
+   * @param payload: any
    */
   put(path: string, payload: any): Observable<any> {
     return this.http.put<any>(path, payload).pipe(
