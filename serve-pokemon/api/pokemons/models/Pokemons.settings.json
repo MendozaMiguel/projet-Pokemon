@@ -26,6 +26,11 @@
     },
     "min_attack": {
       "type": "integer"
+    },
+    "users": {
+      "collection": "user",
+      "via": "pokemon",
+      "plugin": "users-permissions"
     }
   }
 }
